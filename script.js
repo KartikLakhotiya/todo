@@ -55,14 +55,42 @@ $(document).ready(function() {
 
     function editTask(listItem, taskText) {
         const currentTask = taskText.text();
-        const newTask = prompt("Edit your task:", currentTask);
-        if (newTask !== null && newTask !== '') {
-            taskText.text(newTask);
-            saveTasks();
-        }
-        else{
-            $('#validate-edit').fadeIn().delay(2000).fadeOut();
-        }
+        const inputField = $('<input>').attr('type', 'text').val(currentTask).addClass('editInput');
+        const saveButton = $('<button>').text('Save').addClass('saveTask');
+        const cancelButton = $('<button>').text('Cancel').addClass('cancelTask');
+
+        listItem.find('span').replaceWith(inputField);
+        listItem.find('.editTask').replaceWith(saveButton);
+        listItem.append(cancelButton);
+
+        // Hide other buttons
+        listItem.find('.deleteTask, .statusTask').hide();
+
+        saveButton.on('click', () => {
+            const newTask = inputField.val();
+            if (newTask) {
+                taskText.text(newTask);
+                inputField.replaceWith(taskText);
+                saveButton.replaceWith($('<button>').text('Edit').addClass('editTask').on('click', () => editTask(listItem, taskText)));
+                cancelButton.remove();
+
+                // Show other buttons
+                listItem.find('.deleteTask, .statusTask').show();
+                
+                saveTasks();
+            } else {
+                $('#validate-edit').fadeIn().delay(2000).fadeOut();
+            }
+        });
+
+        cancelButton.on('click', () => {
+            inputField.replaceWith(taskText);
+            saveButton.replaceWith($('<button>').text('Edit').addClass('editTask').on('click', () => editTask(listItem, taskText)));
+            cancelButton.remove();
+
+            // Show other buttons
+            listItem.find('.deleteTask, .statusTask').show();
+        });
     }
 
     function toggleStatus(listItem, statusButton) {
