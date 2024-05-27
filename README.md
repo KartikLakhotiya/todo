@@ -1,5 +1,3 @@
-![1716821907127](image/README/1716821907127.png)
-
 # Live Preview
 
 https://svtrst.me/todo
