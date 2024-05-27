@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    font-family: 'Inter';
+}
+
+body {
+    background-color: aqua;
+}
+
+h1{
+    text-decoration: underline;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(155, 155, 155, 0.358);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+
+#validate {
+    margin: 0;
+    padding: 0;
+    display: none;
+    font-size: 15px;
+    color: red;
+    position: absolute;
+    right: 52.5rem;
+    top: 8.6rem;
+}
+
+#validate-edit {
+    margin: 0;
+    padding: 0;
+    display: none;
+    font-size: 15px;
+    color: red;
+    position: absolute;
+    right: 43.5rem;
+    top: 12.8rem;
+}
+
+input {
+    margin: 10px;
+}
+
+#taskInput {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    width: 300px;
+}
+
+#taskInput:focus {
+    border-color: black;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+}
+
+#addTask {
+    background: #3498db;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#addTask:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.deleteTask {
+    background: #d14545;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px;
+    text-decoration: none;
+    position: absolute;
+    right: 42.6rem;
+}
+
+.deleteTask:hover {
+    background: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.editTask {
+    background: #f39c12;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px;
+    text-decoration: none;
+    margin-right: 10px;
+    position: absolute;
+    right: 38rem;
+}
+
+.editTask:hover {
+    background: #e67e22;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.statusTask {
+    background: #2ecc71;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px;
+    text-decoration: none;
+    margin-right: 10px;
+    position: absolute;
+    right: 24.7rem;
+    width: 200px;
+}
+.pending {
+    background-color: rgba(155, 155, 155, 0.358);
+}
+
+.completed {
+    background-color: rgba(100, 255, 100, 0.5);
+}
+
+.statusTask:hover {
+    background: #27ae60;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tabs {
+    margin: 20px 0;
+}
+
+.tabs button {
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+    width: 120px;
+}
+
+.tabs button.active {
+    background-color: #3498db;
+    color: #fff;
+}

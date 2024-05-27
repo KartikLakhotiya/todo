@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>TODO LIST</h1>
+        <input type="text" name="taskInput" id="taskInput" placeholder="Add a Task">
+        <button id="addTask">Add Task</button>
+        <div class="tabs">
+            <button id="allTasksTab" class="active">All</button>
+            <button id="pendingTasksTab">Pending</button>
+            <button id="completedTasksTab">Completed</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <p id="validate">Please Enter A Task</p>
+    <p id="validate-edit">Cannot Add an Empty task</p>
+    <script src="script.js"></script>
+</body>
+
+</html>
