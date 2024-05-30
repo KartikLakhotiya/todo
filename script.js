@@ -65,7 +65,6 @@ $(document).ready(function() {
 
         // Hide other buttons
         listItem.find('.deleteTask, .statusTask').hide();
-
         saveButton.on('click', () => {
             const newTask = inputField.val();
             if (newTask) {

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -37,6 +38,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 input {
@@ -74,11 +76,12 @@ button {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .tabs button {
     padding: 10px;
-    margin: 0 5px;
+    margin: 5px;
     font-size: 16px;
     cursor: pointer;
     border: none;
@@ -108,8 +111,7 @@ li {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
-    height: 70px;
-    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .pending {
@@ -120,7 +122,9 @@ li {
     background-color: #55efc4;
 }
 
-.editTask {
+.editTask,
+.deleteTask,
+.statusTask {
     background-color: #f39c12;
     color: #fff;
     border: none;
@@ -129,48 +133,31 @@ li {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    position: absolute;
-    right: 47.1rem;
-}
-
-.deleteTask {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    position: absolute;
-    right: 42.6rem;
-}
-
-.statusTask {
-    background-color: #302b93;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 168px;
 }
 
 .editTask:hover {
     background-color: #b87304;
 }
 
+.deleteTask {
+    background-color: #e74c3c;
+}
+
 .deleteTask:hover {
     background-color: #c0392b;
+}
+
+.statusTask {
+    background-color: #302b93;
+    width: auto;
 }
 
 .statusTask:hover {
     background-color: #27ae60;
 }
 
-#validate, #validate-edit {
+#validate,
+#validate-edit {
     color: #e74c3c;
     display: none;
     margin-top: 1rem;
@@ -196,8 +183,6 @@ li {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    position: absolute;
-    left: 55rem;
 }
 
 .saveTask:hover {
@@ -213,10 +198,61 @@ li {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    top: 21.5rem;
-    left: 31rem;
 }
 
 .cancelTask:hover {
     background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .input-group input {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .input-group button {
+        width: 50%;
+        border-radius: 15px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs button {
+        width: 130px;
+        margin: 5px 0;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .editTask,
+    .deleteTask,
+    .statusTask,
+    .saveTask,
+    .cancelTask {
+        width: 60%;
+        margin: 5px 0;
+        position: static;
+    }
+
+    .saveTask,
+    .cancelTask {
+        width: 90px;
+    }
+
+    .editInput {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
