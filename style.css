@@ -204,6 +204,10 @@ li {
     background-color: #c0392b;
 }
 
+li {
+    word-wrap: break-word;
+}
+
 @media (max-width: 768px) {
     .container {
         width: 95%;
@@ -241,8 +245,9 @@ li {
     .statusTask,
     .saveTask,
     .cancelTask {
-        width: 60%;
-        margin: 5px 0;
+        width: 100px;
+        margin: 5px 0 5px 10px;
+        padding: 5px;
         position: static;
     }
 
@@ -254,5 +259,9 @@ li {
     .editInput {
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    .buttonContainer {
+        display: flex;
     }
 }
