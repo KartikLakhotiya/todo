@@ -34,12 +34,12 @@ A simple and interactive Todo List application to help you keep track of your ta
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/KartikLakhotiya/todo-list.git
+   git clone https://github.com/KartikLakhotiya/todo.git
    ```
 2. Navigate to the project directory:
 
    ```sh
-   cd todo-list
+   cd todo
    ```
 3. Open `index.html` in your web browser.
 
